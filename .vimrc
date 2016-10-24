@@ -16,7 +16,6 @@ set tags=./tags;/
 set wrap
 set splitright
 set splitbelow
-set hlsearch
 
 " Highlight bad whitespace
 autocmd BufRead *.py highlight BadWhitespace ctermbg=red guibg=red
@@ -30,6 +29,10 @@ set wildignorecase
 set hidden
 execute pathogen#infect()
 
+
+" Syntastic
+let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_php_phpcs_args='--standard=PEAR -n'
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 let g:airline#extensions#tabline#enabled = 1
@@ -46,4 +49,8 @@ nnoremap <C-H> <C-W><C-H>
 
 nnoremap <Space> i_<Esc>r
 
-nnoremap <C-p><C-p> aecho "<pre>";<Enter>print_r();<Enter>echo "</pre>";<Esc>
+nnoremap <C-p><C-p> Oecho "<pre>";<Enter>print_r();<Enter>echo "</pre>";<Esc>
+
+map <F10> :set invpaste<CR>
+
+let g:phpfmt_standard='PEAR'
