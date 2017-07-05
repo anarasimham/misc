@@ -123,3 +123,6 @@ let g:ctrlp_by_filename=1
 autocmd StdinReadPre * let s:std_in=1
 "Will open nerdtree if vim is opened without args
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+nnoremap n nzz
+nnoremap N Nzz
